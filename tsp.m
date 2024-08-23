@@ -1,3 +1,4 @@
+function [best_path, val] = tsp()
 % Given a list of Cities and the time to get from one to another.
 % What is the shortest trajectory that covers all cities?
 N = 4;
@@ -6,7 +7,7 @@ G = digraph(w);
 [best_path,val] = mytsp(G);
 h = plot(G, EdgeLabel=G.Edges.Weight);
 highlight(h,best_path,'NodeColor','g','EdgeColor','r','LineWidth',2)
-
+end
 
 function [best_path, val] = mytsp(G)
     n = size(G.Nodes,1);
