@@ -1,7 +1,6 @@
-function [best_path, val] = tsp()
+function [best_path, val] = tsp(N)
 % Given a list of Cities and the time to get from one to another.
 % What is the shortest trajectory that covers all cities?
-N = 4;
 w = magic(N);
 G = digraph(w);
 [best_path,val] = mytsp(G);
