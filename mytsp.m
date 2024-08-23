@@ -15,13 +15,9 @@ function [best_path, val] = mytsp(G)
             effort = G.Edges.Weight(G.Edges.EndNodes(:,1)==act_path(k) & G.Edges.EndNodes(:,2)==act_path(k+1));
             best(i) = best(i) + effort;
         end
-        fprintf("Effort of %d is: %f\n",i, best(i))
     end
 
     % find best path:
     [val,idx] = min(best);
     best_path = all_combinations(idx(1),:);
-    disp(best_path)
-    disp(val)
-    disp(idx)
 end
