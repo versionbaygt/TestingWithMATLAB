@@ -1,6 +1,7 @@
 function [best_path, val] = mytsp(G)
     n = size(G.Nodes,1);
     all_combinations = perms(1:n);
+    all_combinations(all_combinations(:,1)<n,:) = [];
     [N,M] = size(all_combinations);
     
     % round trip

@@ -17,14 +17,6 @@ classdef test_mytsp < matlab.perftest.TestCase
             testCase.verifyEqual(best_path, exp_path);
             testCase.verifyEqual(val, exp_val);
         end
-        function simpleNewTest(testCase, N, exp_path, exp_val)
-            w = magic(N);
-            G = digraph(w);
-            testCase.startMeasuring()
-            [best_path,val] = mytsp_opt(G);
-            testCase.stopMeasuring()
-            testCase.verifyEqual(best_path, exp_path);
-            testCase.verifyEqual(val, exp_val);
-        end
+        
     end
 end
