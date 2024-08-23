@@ -1,4 +1,4 @@
-classdef test_tsp < matlab.unittest.TestCase
+classdef test_tsp < matlab.perftest.TestCase
 
     methods (Test)
         % Test methods
@@ -24,6 +24,15 @@ classdef test_tsp < matlab.unittest.TestCase
             [best_path, val] = tsp(N);
             testCase.verifyEqual(best_path, [4 1 3 2 4]);
             testCase.verifyEqual(val, 22);
+        end
+        function N7_Test(testCase)
+            N = 7;
+            testCase.startMeasuring()
+            [best_path, val] = tsp(N);
+            testCase.stopMeasuring()
+            testCase.verifyEqual(best_path, [7 6 3 2 4 1 5 7]);
+            testCase.verifyEqual(val, 77);
+            
         end
     end
 
